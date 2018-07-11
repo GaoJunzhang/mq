@@ -1,0 +1,83 @@
+<!--index.wxml-->
+<include src="/comm/comm.wxml" />
+<!-- 自定义头部 -->
+<view class="container pt140 pb160">
+  <view class="header clearfix background">
+    <text class="title fl">密圈</text>
+  </view>
+  <!-- 密圈 -->
+  <view class="{{selected?'show':'hidden'}}">
+    <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="onReachBottom" bindscroll="scroll">
+      <view wx:if="{{boolSession}}">
+        <block wx:for="{{circleList}}" wx:for-item="item">
+          <template is="circle" data="{{item}}" />
+        </block>
+      </view>
+      <view wx:else>
+        <image src='../../images/image/miquanBG.jpg' mode="widthFix" style='width:100%;display:block;'></image>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 圈密 -->
+  <view class="{{selected?'hidden':'show'}}">
+    <view class="add_circle">
+      <navigator url="../add/add" hover-class="navigator-hover" class="add_url">添加密圈
+        <text class="iconfont icon-add"></text>
+      </navigator>
+    </view>
+    <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="onReachBottom" bindscroll="scroll">
+      <block wx:for="{{circleList1}}" wx:for-item="item">
+        <template is="circle" data="{{item}}" />
+      </block>
+    </scroll-view>
+
+  </view>
+  <!-- 底部 -->
+  <view class="foot col-avg2 clearfix" wx:if="{{boolSession}}">
+    <view class="col-item fl nav {{selected?'active':''}}" bindtap="selected">
+      <text class="iconfont icon-miquan"></text>
+    </view>
+    <view class="col-item fl nav {{selected?'':'active'}}" bindtap="selected1">
+      <text class="iconfont icon-quanmi"></text>
+    </view>
+  </view>
+  <view class="foot col-avg2 clearfix" wx:else>
+    <view class="col-item" style="width:100%;">
+      <button style='width:95%;' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">立即进入</button>
+    </view>
+  </view>
+</view>
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" bindtap="hideModal" wx:if="{{showModal}}">
+  <view class="modal-title">这是私密圈，只能被邀请进入。</view>
+  <view class="modal-footer">
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">去创建</view>
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+  </view>
+</view>
+<!-- 模板 -->
+<template name="circle">
+  <view class="circle">
+    <view class="bg{{item.bgColor}} circle_url" id="{{item.id}}" data-val="{{item.isLimit}}" data-name="{{item.name}}" data-like="{{item.activityGreatCoun}}" data-count="{{item.activityFlagCount}}" data-color="{{item.bgColor}}" data-startdate="{{item.startDate}}"
+      data-enddate="{{item.endDate}}" data-img='{{item.img}}' bindtap="showDialogBtn">
+      <view class="circle_con">
+        <text wx:if="{{item.isLimit == '0'}}" class="iconfont icon-closed color{{item.bgColor}}"></text>
+        <view class="circle_head clearfix">
+          <text class="circle_title color{{item.bgColor}}">{{item.name}}</text>
+          <view class="circle_user">
+            <image wx:for="{{item.signHeads}}" src="{{item.log}}"></image>
+          </view>
+        </view>
+        <view class="circle_des">{{item.content}} </view>
+      </view>
+      <view class="circle_foot clearfix">
+        <view class="circle_total fl">密友已
+          <span class="red">{{item.activityFlagCount}}</span>次{{item.name}}</view>
+        <view class="circle_like red fr" bindtap="showLikeBtn">
+          <text class="iconfont icon-xin1"></text>{{item.activityGreatCoun}}
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

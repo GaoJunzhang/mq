@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/comment/comment",
+    "pages/info/info",    
+    "pages/add/add",
+    "pages/add/des/des",
+    "pages/add/addCover/addCover",
+    "pages/add/weCropper/weCropper",
+    "pages/comment/chooseUser/chooseUser",
+    "pages/info/commentUser/commentUser",
+    "pages/info/commentList/commentList",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "密圈",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

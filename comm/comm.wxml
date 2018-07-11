@@ -1,0 +1,11 @@
+<view class="self-modal-box" wx:if="{{showSelfModal}}">
+  <view class="warn-box">
+  	<icon type="warn" size="{{26}}" color="#aaaaaa"/>
+  	<view style="max-width:300rpx;margin-top:30rpx;">{{errorMsg}}</view>
+  </view>
+</view>
+<view class="self-modal-box1" wx:if="{{showSelfNotice}}">
+  <view class="warn-box1">
+  	<view style="max-width:300rpx;">{{noticeMsg}}</view>
+  </view>
+</view>

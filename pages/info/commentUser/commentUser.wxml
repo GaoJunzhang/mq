@@ -1,0 +1,14 @@
+<view class="container pt140 bg" wx:for="{{userList}}">
+<view class="header clearfix background">
+<view bindtap="navigateBack" class="back fl"><text class="iconfont icon-zuojiantou"></text></view>
+<text class="title fl">密密</text>
+</view>
+<view class="commentUser">
+  <view class="commentUserHead">密过的人({{userList.length}})</view>
+  <view class="commentUserList col-avg8">
+    <view class="commentUserImage fl col-item"  wx:for="{{userList}}">
+      <image src="{{item.log}}" mode="widthFix"></image>
+    </view>
+  </view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+/* pages/info/info.wxss */
+
+.info_head {
+  width: 100%;
+  color: #fff;
+  padding: 25rpx 0;
+}
+
+.info_head .info_title {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.info_title button[plain] {
+  padding: 5rpx;
+  margin-right: 0;
+  line-height: 1;
+  color: #fff;
+  border: none;
+}
+
+.info_head .info_title text {
+  font-size: 60rpx;
+}
+
+.info_head .info_con {
+  padding-top: 100rpx;
+  text-align: center;
+}
+
+.info_head .info_con .info_num {
+  font-size: 35rpx;
+}
+
+.info_head .info_con .info_num .font60 {
+  font-size: 60rpx;
+}
+
+.info_head .info_con .info_zan {
+  padding-top: 20rpx;
+}
+
+.info_head .info_con text {
+  margin-right: 20rpx;
+  margin-left: 40rpx;
+}
+
+

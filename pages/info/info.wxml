@@ -1,0 +1,93 @@
+<!--pages/info/info.wxml-->
+<view class="container pt140 pb160">
+  <view class="header clearfix background{{bgColor}} color">
+    <view bindtap="navigateBack" class="back fl">
+      <text class="iconfont icon-zuojiantou"></text>
+    </view>
+  </view>
+  <view class="info_head background{{bgColor}}" data-id="{{item.activityId}}">
+    <view class="info_title clearfix">
+      <view style="display:block;">
+        <text class="fl">{{name}}</text>
+      </view>
+      <button class='share fr' id="shareBtn" open-type="share" plain="true">
+        <text class="iconfont icon-forwarding"></text>
+      </button>
+    </view>
+    <view style="position:relative;width:90%;margin-left:5%;">
+      <text style='font-size:16px;' wx:if="{{boolDate}}">{{startdate}}-{{enddate}}</text>
+    </view>
+    <view class="info_con">
+      <view class="info_num">
+        <text class="font60">{{total}}</text>条密密</view>
+      <view class="info_zan">
+        <text class="iconfont icon-xin3"></text>{{like}}
+        <text class="iconfont icon-user"></text>{{count}}
+      </view>
+    </view>
+  </view>
+  <!-- 说说列表 -->
+  <view class="info_list" wx:for="{{rows}}" wx:for-item="item" id="{{item.id}}">
+    <view class="info_list_head clearfix">
+      <image src="{{item.wxUrl}}" class="fl"></image>
+      <text class="fl">{{item.nickName}}</text>
+      <text class="fl gray">{{item.createTime}}</text>
+    </view>
+    <!-- 说说内容 -->
+    <view class="info_list_con">
+      <block wx:if="{{item.content!=''}}">
+        <view class="info_list_des" style='font-size:30rpx'>
+          <text wx:for="{{item.atUserList}}" wx:for-item="item2" style="color:#64acfe;">@{{item2.nickName}}</text> {{item.content}}
+        </view>
+        <view class="info_list_des" style="margin-top:28rpx;color:#555;">
+          {{item.position}}
+        </view>
+
+      </block>
+
+      <block wx:if="{{item.imgUrls.length>0}}">
+        <view class="a-scroll">
+          <scroll-view scroll-x class="my-scroll" data-src="{{item.imgUrls}}" bindtap="biggerImg" wx:if="{{item.imgUrls.length>0}}">
+            <view id="img1" class="s-item" wx:for="{{item.imgUrls}}">
+              <image src="{{item.imgUrl}}" mode="widthFix"></image>
+            </view>
+          </scroll-view>
+        </view>
+      </block>
+      <block wx:if="{{item.music!=''}}">
+        <view wx:if="{{item.music}}" class="voices_info" data-key="{{item.music}}" bindtap="gotoPlay">
+          <view class="{{animationData==1?'show':'hidden'}}">
+            <text class="iconfont icon-yuyin2"></text>
+          </view>
+          <view class="{{animationData==2?'show':'hidden'}}">
+            <text class="iconfont icon-yuyin3"></text>
+          </view>
+          <view class="{{animationData==3?'show':'hidden'}}">
+            <text class="iconfont icon-yuyin1"></text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="info_list_foot gray">
+      <label bindtap='commentUser' data-val="{{item.id}}" data-great="{{item.isGreat}}" data-index="{{index}}">
+        <text class="iconfont icon-xin1 color3" wx:if="{{item.isGreat==0}}"></text>
+        <text class="iconfont icon-xin2 color3" wx:if="{{item.isGreat==1}}"></text>{{item.signGreatSum}}人密密
+      </label>
+      <label bindtap='commentList' data-val="{{item.id}}">
+        <text class="iconfont icon-message color1"></text>{{item.signCommentSum}}人回答
+      </label>
+    </view>
+  </view>
+  <view class="foot col-avg1 clearfix">
+    <block wx:if="{{isApply==1}}">
+      <view class="col-item fl nav" bindtap="acceptBtn">
+        <text>密一下</text>
+      </view>
+    </block>
+    <block wx:if="{{isApply==0}}">
+      <view class="col-item fl nav" bindtap="acceptBtn">
+        <text>接受邀请</text>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+.commentUser{
+  width: 100%;
+}
+.commentUserHead{
+  padding: 40rpx 0 30rpx;
+  width: 90%;
+  margin-left: 5%;
+  font-size: 45rpx;
+  color: #64a6ff;
+}
+.commentUserList{
+  width: 90%;
+  margin-left: 5%;
+}
+.commentUserList image{
+  width: 90%;
+  margin-top: 20rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 50%;
+}

@@ -1,0 +1,98 @@
+<view class="container pt140 bg">
+  <view class="header clearfix background">
+    <view bindtap="navigateBack" class="back fl">
+      <text class="iconfont icon-zuojiantou"></text>
+    </view>
+    <text class="title fl">密圈</text>
+  </view>
+
+  <scroll-view scroll-y style="height: 1180rpx;">
+
+    <view class="addCover">
+      <view class="add_circle_head">上传本地图片</view>
+
+      <view class="croper-wrapper">
+        <block wx:if="{{tempFilePaths==''}}">
+
+          <!-- <canvas class="cropper" disable-scroll="true" bindtouchstart="uploadScaleStart" bindtouchmove="uploadScaleMove" bindtouchend="uploadScaleEnd" style="width:{{width}}rpx;height:{{height}}rpx;" canvas-id="cropper"  >
+         </canvas>  -->
+
+          <image canvas-id="cropper" style="width: 100%; height: 200px; background-color: #eeeeee;" mode="{{item.mode}}" src="{{src}}"></image>
+
+        </block>
+
+        <view class="coverDes">（推荐尺寸：750×410 )</view>
+        <view style="text-align:center;margin-top:40rpx;height:60rpx;">
+          <button bindtap="chooseImg" hover-class="none" class="btn1">选择图片</button>
+          <!-- class="default"-->
+          <button bindtap="getCropperImage2" hover-class="none" class="btn1">确定</button>
+        </view>
+      </view>
+
+
+      <!--
+    <view class="coverBtn">
+      <view bindtap="chooseImg">
+        <block wx:if="{{tempFilePaths==''}}">
+            <view class="addCoverBtn"><text class="iconfont icon-tupian"></text> </view> 
+        </block>
+        <block wx:else>
+         <image src="{{tempFilePaths}}"  mode="widthFix" style="width:750px;height:410px;"/>
+        </block>
+      </view>
+      <view class="coverDes">（推荐尺寸：750×410 )</view>
+    </view>  -->
+      <view class="add_circle_head">推荐图片</view>
+
+      <scroll-view scroll-y >
+
+        <view class="col-avg2 clearfix coverList">
+          <block wx:for="{{coverList}}" wx:for-item="item">
+            <view class="col-item fl">
+              <image src="{{item.imgUrl}}" mode="widthFix" bindtap="chooseCover" data-imgurl='{{item.imgUrl}}'></image>
+            </view>
+          </block>
+          <!-- <view class="col-item fl">
+        <image src="../../../../images/image/t1.jpg" mode="widthFix"></image>
+      </view>
+      <view class="col-item fl">
+        <image src="../../../../images/image/t2.jpg" mode="widthFix"></image>
+      </view>
+      <view class="col-item fl">
+        <image src="../../../../images/image/t3.jpg" mode="widthFix"></image>
+      </view>
+      <view class="col-item fl">
+        <image src="../../../../images/image/t4.jpg" mode="widthFix"></image>
+      </view>
+       <view class="col-item fl">
+        <image src="../../../../images/image/t5.jpg" mode="widthFix"></image>
+      </view>
+       <view class="col-item fl">
+        <image src="../../../../images/image/t6.jpg" mode="widthFix"></image>
+      </view>
+       <view class="col-item fl">
+        <image src="../../../../images/image/t7.jpg" mode="widthFix"></image>
+      </view>
+       <view class="col-item fl">
+        <image src="../../../../images/image/t8.jpg" mode="widthFix"></image>
+      </view>
+       <view class="col-item fl">
+        <image src="../../../../images/image/t9.jpg" mode="widthFix"></image>
+      </view>
+       <view class="col-item fl">
+        <image src="../../../../images/image/t10.jpg" mode="widthFix"></image>
+      </view>
+       <view class="col-item fl">
+        <image src="../../../../images/image/t11.jpg" mode="widthFix"></image>
+      </view>
+       <view class="col-item fl">
+        <image src="../../../../images/image/t12.jpg" mode="widthFix"></image>
+      </view>
+       <view class="col-item fl">
+        <image src="../../../../images/image/t13.jpg" mode="widthFix"></image>
+      </view> -->
+        </view>
+      </scroll-view>
+    </view>
+  </scroll-view>
+</view>

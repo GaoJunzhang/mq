@@ -1,0 +1,71 @@
+.addCover{
+  width:94%;
+  padding: 20rpx 3%;
+}
+.coverList image{
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 15rpx;
+}
+.coverBtn{
+  width: 50%;
+  margin-top: 20rpx;
+}
+.coverBtn .addCoverBtn{
+  height: 200rpx;
+  line-height: 200rpx;
+  background: #64acfe;
+  color: #ffffff;
+  text-align: center;
+}
+.coverBtn .addCoverBtn text{
+  font-size: 50rpx;
+}
+.coverBtn .coverDes{
+  text-align: center;
+  padding: 20rpx 0;
+  color: #bcbcbc;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+.coverBtn image{
+  width: 100%;
+}
+
+
+.croper-wrapper{
+    margin-top:40px;
+    position: relative;
+    overflow:scroll;
+    width:750rpx;
+    height:410rpx;
+}
+
+.cropper{
+    background-color: rgba(0,0,0,.8);
+    z-index: 1;
+    margin: 4rpx;
+    padding-right: 10rpx;
+    margin-right: 10rpx;
+    border:1px solid red;
+}
+
+button{
+    width:2%;
+    color:#fff;
+    background-color:#3CC51F;
+    margin-top: 40px;
+    border:1px solid red;
+}
+
+.default{
+    color:#3CC51F;
+    background-color: #e5e5e5;
+    border: 1px solid #3CC51F;
+    
+}
+
+page{
+  height:100%;
+}

@@ -1,0 +1,37 @@
+<view class="container pt140 pb160">
+<view class="header clearfix background">
+<view bindtap="navigateBack" class="back fl"><text class="iconfont icon-zuojiantou"></text></view>
+<text class="title fl">评论</text>
+</view>
+  <view class="commentList">
+    <view class="info_list" wx:for="{{comments}}" wx:for-item="item">
+      <view class="info_list_head clearfix">
+        <image src="{{item.logo}}" class="fl"></image>
+        <text class="fl">{{item.ownerUserName}}</text>
+      </view>
+      <view class="info_list_con">
+        <view class="info_list_des">
+          <text wx:if="{{item.targetUserName!=''}}"> 回复 <text style='color:#1E90FF'>{{item.targetUserName}}</text>：</text>{{item.content}}
+        </view>
+        <!-- <view wx:if="{{item.tempFilePath}}" class="voices_info" data-key="{{item.tempFilePath}}">
+          <text class="iconfont icon-yuyin1"></text>
+        </view> -->
+        <!-- <view class="a-scroll">
+          <scroll-view scroll-x class="my-scroll" wx:if="{{item.img != ''}}">
+            <view id="img1" class="s-item" wx:for="{{item.img}}">
+              <image src="{{item.url}}" mode="widthFix"></image>
+            </view>
+          </scroll-view>
+        </view> -->
+      </view>
+      <view class="info_list_foot gray clearfix">
+        <view class="fl gray time">{{item.createrTime}}</view>
+        <view class="fl talk" bindtap="bindReply" id="{{item.ownerUserId}}" data-tname='{{item.ownerUserName}}' data-val="{{item.targetUserId}}">回复</view>
+      </view>    
+    </view>
+  </view>
+  <view class="release">
+    <input class="text" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" placeholder="回复 {{tName}}:" bindinput="bindKeyInput"></input>
+    <view bindtap="bindSubmit" class="submit">发送</view>
+  </view>
+</view>

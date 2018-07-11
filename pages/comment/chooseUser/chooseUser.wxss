@@ -1,0 +1,57 @@
+.choose_userList{
+  width: 100%;
+  display: block;
+}
+.choose_userList .choose_userInfo{
+  line-height: 90rpx;
+}
+.choose_userList .choose_userInfo label{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: block;
+  padding: 20rpx 0;
+}
+.choose_userList .choose_userInfo label.checked{
+  background: #f2f2f2;
+}
+.choose_userList .choose_userInfo label checkbox{
+  margin-left: 5%;
+}
+.choose_userList .choose_userInfo image{
+  width:80rpx;
+  height: 80rpx;
+  border-radius: 55%;
+  vertical-align: bottom;
+  margin-right: 20rpx;
+  border: 5rpx solid #ffffff;
+}
+checkbox {
+  margin-right: 30rpx;
+}
+
+/*  重写 checkbox 样式  */
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: 1rpx solid #63a9fe;
+  background: #63a9fe;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

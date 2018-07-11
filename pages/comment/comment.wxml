@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<view class="container pt140 pb160">
+  <view class="header clearfix background">
+    <view bindtap="navigateBack" class="back fl">
+      <text class="iconfont icon-zuojiantou"></text>
+    </view>
+    <text class="title fl">密一下</text>
+  </view>
+    <form> 
+  <view class="comment">
+    <view class="section">
+      <view class="borderBottom">
+        <textarea style='display:{{display}}' placeholder-class="phcolor" placeholder="有什么想说的全部说出来吧（^^）" focus="{{focus}}" bindinput='contentInput'/>
+      </view>
+      <view wx:if="{{isSpeaking}}" class="time borderBottom pb10 clearfix" bindtouchend="touchup">
+        <view class="touchup fl"></view>
+        <view class="color3">{{timeCount}}</view><view style="font-size:28rpx;">你正在录音,录音时长11秒内</view>
+      </view>
+      <view class="borderBottom pb10 {{isShow?'hidden':'show'}}">
+        <view wx:if="{{isShowImg}}" class="images_list clearfix col-avg3">
+          <block wx:for="{{tempFilePaths}}">
+            <view class='col-item fl addImages'>
+              <image src="{{item.tempFilePaths}}" mode="widthFix" />
+            </view>
+          </block>
+          <view class='col-item fl a dImageBtn' bindtap="addimage">
+            <text class="iconfont icon-tupian"></text>
+          </view>
+        </view>
+        <view wx:if="{{isShowVoices}}" class="voices_list">
+          <!-- <block wx:for="{{music}}"> -->
+            <view class="clearfix">
+              <view class="cell-bd fl" data-key="{{tempFilePath}}" bindtap="gotoPlay">
+               <view class="{{animationData==1?'show':'hidden'}}"><text class="iconfont icon-yuyin2"></text></view>
+               <view class="{{animationData==2?'show':'hidden'}}"><text class="iconfont icon-yuyin3"></text></view>
+               <view class="{{animationData==3?'show':'hidden'}}"><text class="iconfont icon-yuyin1"></text></view>
+              </view>
+              <view class="fl timeCount">
+                <view>音频时长：</view>
+                <view>{{timeCount}}"</view>
+              </view>
+              <view class="delPlay fr" data-key="{{tempFilePath}}" bindtap="delPlay">删除</view>
+            </view>
+          <!-- </block> -->
+        </view>
+      </view>
+      <view class="comment_btn clearfix {{isShow?'show':'hidden'}}">
+        <view class="add_comment fl" bindtap="chooseimage">
+          <text class="iconfont icon-photo"></text>
+        </view>
+        <view class="add_comment fl" bindtouchstart="touchdown">
+          <text class="iconfont icon-yuyin"></text>
+        </view>
+        <view class="add_comment fl hidden">
+          <text class="iconfont icon-luxiang"></text>
+        </view>
+      </view>
+    </view>
+    <view class="comment_url">
+      <view class="borderBottom add_comment col-avg2 clearfix" bindtap="chooseLocation" data-lng="{{location.longitude}}" data-lat="{{location.latitude}}">
+        <view class='fl col-item'>
+          <text class="iconfont icon-dingwei color6"></text>所在位置</view>
+        <view class='fl col-item'>
+          <input value='{{location.name}}' disabled='ture' />
+        </view>
+        <text class="iconfont icon-youjiantou fr"></text>
+
+      </view>
+      <view class="add_comment col-avg2 clearfix" bindtap='ta'>
+        <view class='fl col-item'>
+          <text class="iconfont icon-weixin color7"></text>@TA</view>
+        <text class="iconfont icon-youjiantou fr"></text>
+      </view>
+    </view>
+    <view class="section">
+      <label class="checkbox">
+      <checkbox-group bindchange="checkboxChange">
+        <checkbox value="{{isHide}}" />匿名发表
+        </checkbox-group>
+      </label>
+    </view>
+  </view>
+  <view class="foot col-avg1 clearfix">
+    <view class="col-item fl nav" bindtap='bindSubmit' >
+      <text>发表</text>
+    </view>
+  </view>
+  </form> 
+</view>
+<view wx:if="{{isTa==0}}" class="position">
+<include src="../comment/chooseUser/chooseUser"/> 
+</view>

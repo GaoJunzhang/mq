@@ -1,0 +1,62 @@
+<view class="container pt140 pb160">
+<view class="header clearfix background">
+ <view bindtap="navigateBack" class="back fl">
+      <text class="iconfont icon-zuojiantou"></text>
+    </view>
+<text class="title fl">密圈</text>
+</view>
+  <form>
+    <view class="quan_form">
+      <view class="add_circle_head">密圈名称</view>
+      <view class="section">
+        <input name="name" placeholder="来个只有圈内人懂得主题..." value="{{name}}" bindchange="name" class="title"/>
+      </view>
+      <view class="section2 section_gap">
+        <view class="section__title">开始结束时间</view>
+        <radio-group name="radio-group" bindchange="radioChange">
+          <label>
+            <radio value="radio1" checked='true'></radio>不限日期...</label>
+          <label>
+            <radio value="radio2"></radio>指定开始结束日期</label>
+        </radio-group>
+        <view class="choose_date {{hidden}}">
+          <picker mode="date" value="{{startDate}}" start="{{start}}" end="2050-01-01" bindchange="bindStartDateChange">
+            <view class="picker clearfix">
+              <view class="dateTitle fl"> 开始日期</view>
+              <view class="datePicker fr">{{startDate}}
+                <text class="iconfont icon-date"></text>
+              </view>
+            </view>
+          </picker>
+          <block wx:if="{{disabled==false}}">
+            <picker mode="date" value="{{endDate}}" start="{{startDate}}" end="2050-01-01" bindchange="bindEndDateChange">
+              <view class="picker clearfix">
+                <view class="dateTitle fl"> 结束日期</view>
+                <view class="datePicker fr">{{endDate}}
+                  <text class="iconfont icon-date"></text>
+                </view>
+              </view>
+            </picker>
+          </block>
+          <block wx:else>
+            <view class="picker clearfix">
+              <view class="dateTitle fl"> 结束日期</view>
+              <view class="datePicker fr">请先选择开始日期
+                <text class="iconfont icon-date"></text>
+              </view>
+            </view>
+          </block>    
+        </view>
+      </view>
+      <view class="section section_gap clearfix">
+        <view class="section__title fl">只有圈内人可进入</view>
+        <switch name="switch" class="fr" type="switch" checked="true" bindchange="listenerSwitch"/>        
+      </view>
+    </view>
+    <view class="foot col-avg1 clearfix">
+      <view class="col-item fl nav" formType="submit">      
+       <view bindtap='linkNav'><text>下一步</text></view>
+      </view>
+    </view>
+  </form>
+</view>

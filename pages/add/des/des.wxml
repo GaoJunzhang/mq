@@ -1,0 +1,71 @@
+<!--pages/add/des/des.wxml-->
+<view class="container pt140 pb160">
+  <view class="header clearfix background">
+  <view bindtap="navigateBack" class="back fl">
+      <text class="iconfont icon-zuojiantou"></text>
+    </view>
+    <text class="title fl">密圈</text>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="quan_form">
+      <view class="add_circle_head">选个主题颜色</view>
+      <view class="section clearfix">
+        <view class="background1 fl theme" id="1" bindtap='themeChange'>
+          <text wx:if="{{bgColor==1}}" class="iconfont icon-duihao"></text>
+        </view>
+        <view class="background2 fl theme" id="2" bindtap='themeChange'>
+          <text wx:if="{{bgColor==2}}" class="iconfont icon-duihao"></text>
+        </view>
+        <view class="background3 fl theme" id="3" bindtap='themeChange'>
+          <text wx:if="{{bgColor==3}}" class="iconfont icon-duihao"></text>
+        </view>
+        <view class="background4 fl theme" id="4" bindtap='themeChange'>
+          <text wx:if="{{bgColor==4}}" class="iconfont icon-duihao"></text>
+        </view>
+        <view class="background5 fl theme" id="5" bindtap='themeChange'>
+          <text wx:if="{{bgColor==5}}" class="iconfont icon-duihao"></text>
+        </view>
+      </view>
+      <view class="add_cover">
+        <view wx:if="{{bgImg==''}}">
+          <image src="https://xiao.qingheshe.com/constant/tj03.jpg" mode="widthFix"></image>
+        </view>
+        <view wx:else>
+          <image src="{{bgImg}}" mode="widthFix"></image>
+        </view>
+        <view class="add_circle section1">
+          <view bindtap='addImage' class="add_url">修改封面
+            <text class="iconfont icon-tupian"></text>
+          </view>
+        </view>
+      </view>
+      <view class="add_circle_head">密圈简介（选题）</view>
+      <view class="section textarea">
+        <!-- <textarea class="content_info" readonlyunselectable="on" name='content' focus="{{focus}}" bindinput="bindKeyInput"></textarea>
+        <view class="content_btn" bindtap="bindButtonTap">
+        {{content}}
+        </view> -->
+        <textarea style="height: 5em" bindinput="bindKeyInput"/>
+      </view>
+      <view class="section1">
+        <view class="add_circle">
+        <button class='add_url share' id="shareBtn" open-type="share" plain="true">邀请密友<text class="iconfont icon-teammates"></text>
+        </button>
+        </view>
+      </view>
+    </view>
+    <view class="foot col-avg1 clearfix">
+      <button class="btn" form-type="submit" hover-class="none">完成</button>
+    </view>
+  </form>
+</view>
+
+<view wx:if="{{uploudImageShow}}" class="position">
+<include src="../addCover/addCover.wxml"/> 
+</view> 
+
+<!--
+<view wx:if="{{uploudImageShow}}" class="position">
+<include src="../weCropper/weCropper.wxml"/> 
+</view>
+-->

@@ -1,0 +1,126 @@
+/* pages/add/des/des.wxss */
+.section{
+  position: relative;
+}
+.section .content_info{  
+  height: 40rpx;
+  overflow: hidden;
+  color:transparent;
+  margin-top: 160rpx;
+}
+.section .content_btn{
+  overflow: hidden;
+  padding: 20rpx;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 90%;
+  height: 180rpx;
+  line-height: 40rpx;
+  background: #ffffff;
+  z-index: 100;
+
+}
+.position{
+  width: 100%;
+  min-height: 100%;
+  display: block;
+  background: #ffffff;
+  z-index: 99999;
+  position:fixed;
+  top:0;
+  left:0;
+}
+.theme{
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 15rpx;
+  position: relative;
+  border-radius: 5rpx;
+}
+.theme text{
+  font-size: 35rpx;
+  color:#ffffff;
+  position: absolute;
+  bottom: 6rpx;
+  right: 6rpx;
+}
+.add_cover{
+  margin-top: 20rpx;
+}
+.add_cover image{
+  width: 100%;
+  border-radius: 5rpx;
+}
+textarea{
+  width: 100%;
+  line-height: 40rpx;
+  height: 120rpx;
+}
+.textarea{
+  width: 94%;
+  display: block;
+}
+.focusDes{
+  width: 100%;
+  display:block; 
+}
+
+.addCover{
+  width:94%;
+  padding: 20rpx 3%;
+}
+.coverList image{
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 15rpx;
+}
+.coverBtn{
+  width: 50%;
+  margin-top: 20rpx;
+}
+.coverBtn .addCoverBtn{
+  height: 200rpx;
+  line-height: 200rpx;
+  background: #64acfe;
+  color: #ffffff;
+  text-align: center;
+}
+.coverBtn .addCoverBtn text{
+  font-size: 50rpx;
+}
+.coverBtn .coverDes{
+  text-align: center;
+  padding: 20rpx 0;
+  color: #bcbcbc;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+.coverBtn image{
+  width: 100%;
+}
+
+page{
+    -webkit-user-select: none;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #e5e5e5;
+}
+
+.btn1{
+  display: inline-block;
+  line-height: 60rpx;
+  margin-left:20rpx;
+  margin-right:20rpx;
+  padding-left:20rpx;
+  padding-right:20rpx;
+  border-radius: 50rpx; 
+  font-size: 48rpx;
+  border:1rpx solid #64acfe;
+  color: #64acfe;
+  background: #ffffff;
+  outline: none; 
+}

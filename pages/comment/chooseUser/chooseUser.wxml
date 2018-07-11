@@ -1,0 +1,27 @@
+<view class="container pb160 bg">
+ <view class="header clearfix background">
+    <!-- <view bindtap="navigateBack" class="back fl">
+      <text class="iconfont icon-zuojiantou"></text>
+    </view> -->
+    <text class="title fl">@ta</text>
+  </view>
+  <form>
+    <checkbox-group class="choose_userList" bindchange="checkChange">
+      <view style='height:120rpx'></view>
+      <view class="choose_userInfo clearfix" wx:for="{{info}}">
+        <label class="{{item.isLogin==1?'checked':''}}">
+          <checkbox value="{{item.id}}" />
+          <image src="{{item.img}}" mode="widthFix"/>{{item.nickName}}
+        </label>
+      </view>
+    </checkbox-group>
+    <view class="foot col-avg2 clearfix ">
+      <view class="col-item fl nav" bindtap='cancel'>
+        <text>取消</text>
+      </view>
+      <view class="col-item fl nav " bindtap='ok'>
+        <text>完成</text>
+      </view>
+    </view>
+  </form>
+</view>

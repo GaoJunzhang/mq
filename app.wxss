@@ -1,0 +1,402 @@
+/**app.wxss**/
+@import "./iconfont.wxss";
+@import "comm/comm.wxss";
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-youjiantou:before { content: "\e62b"; }
+
+.icon-zuojiantou:before { content: "\e64e"; }
+
+.icon-yuandianda:before { content: "\e75b"; }
+
+.icon-yuanhuan:before { content: "\e831"; }
+
+.icon-weixin:before { content: "\e638"; }
+
+.icon-xin3:before { content: "\e639"; }
+
+.icon-add:before { content: "\e63a"; }
+
+.icon-date:before { content: "\e63b"; }
+
+.icon-forwarding:before { content: "\e63c"; }
+
+.icon-user:before { content: "\e63d"; }
+
+.icon-xin2:before { content: "\e63e"; }
+
+.icon-message:before { content: "\e63f"; }
+
+.icon-tupian:before { content: "\e640"; }
+
+.icon-dingwei:before { content: "\e641"; }
+
+.icon-xin1:before { content: "\e642"; }
+
+.icon-teammates:before { content: "\e643"; }
+
+.icon-closed:before { content: "\e644"; }
+
+.icon-photo:before { content: "\e645"; }
+
+.icon-luxiang:before { content: "\e646"; }
+
+.icon-yuyin:before { content: "\e647"; }
+
+.icon-duihao:before { content: "\e648"; }
+
+.icon-quanmi:before { content: "\e649"; }
+
+.icon-miquan:before { content: "\e64a"; }
+
+.icon-yuyin1:before { content: "\e64b"; }
+
+.icon-yuyin2:before { content: "\e64c"; }
+
+.icon-yuyin3:before { content: "\e64d"; }
+
+
+
+
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+  color: #333333;
+}
+.container {
+  min-height: 100%;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box; 
+} 
+.pt140{
+  padding-top: 140rpx;
+}
+.pb120{
+  padding-bottom: 120rpx;
+}
+.pb160{
+  padding-bottom: 160rpx;
+}
+.pb10{
+  padding-bottom: 10rpx;
+}
+.bg{
+  background:#ffffff;
+}
+.bg1{
+  background: linear-gradient(to bottom left, #E6F1FF , #ffffff, #ffffff);
+}
+.bg2{
+  background: linear-gradient(to bottom left, #FEE7E7 , #ffffff, #ffffff);
+}
+.bg3{
+  background: linear-gradient(to bottom left, #FFEEE6 , #ffffff, #ffffff);
+}
+.bg4{
+  background: linear-gradient(to bottom left, #E6F8F1 , #ffffff, #ffffff);
+}
+.bg5{
+  background: linear-gradient(to bottom left, #DFF1F2 , #ffffff, #ffffff);
+}
+.color{
+  color:#ffffff;
+}
+.color1{
+  color: #64A6FF;
+}
+.color2{
+  color: #FC6A6A;
+}
+.color3{
+  color: #FF935E;
+}
+.color4{
+  color: #63D5A6;
+}
+.color5{
+  color: #2FA6AE;
+}
+.color6{
+  color: #898989;
+}
+.color7{
+  color: #00d96e;
+}
+
+.background{
+  background:#ffffff;
+  color: #333333;
+}
+.background1{
+  background: #64A6FF;
+}
+.background2{
+  background: #FC6A6A;
+}
+.background3{
+  background: #FF935E;
+}
+.background4{
+  background: #63D5A6;
+}
+.background5{
+  background: #2FA6AE;
+}
+.red{
+  color:#f7674f;
+}
+.hidden{
+  display: none;
+}
+.clearfix:after{
+    content:"";
+    display:block;
+    height:0;
+    clear:both;
+    overflow:hidden;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.col-avg1 .col-item{
+    width:70%;
+    margin-left: 15%;
+}
+.col-avg2 .col-item{
+     width:50%;
+}
+.col-avg3 .col-item{
+    width:33.33333333%;
+}
+.col-avg4 .col-item{
+    width:25%;
+}
+.col-avg5 .col-item{
+    width:20%;
+}
+.col-avg8 .col-item{
+    width:12.5%;
+}
+.show{
+  display:block;
+  }
+.hidden{
+  display:none;
+  }
+.header{
+  position: fixed;
+  top:0;
+  z-index: 999;
+  width: 100%;
+  padding-top: 40rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  overflow: hidden;
+  font-size: 40rpx;  
+}
+.header .back text{  
+  font-size: 40rpx;  
+}
+.header .back,.header .title{
+  margin-left: 3%;
+}
+
+
+.foot{
+  width: 94%;
+  padding: 20rpx 3%;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  text-align: center;
+  background: #ffffff;
+  border-top:1px solid #f5f5f5;
+}
+.foot .col-item{
+  display: block;  
+}
+.foot .col-item text{
+  display: block;
+  width: 80%;
+  margin-left:10%;
+  padding: 20rpx 0;
+  border-radius: 60rpx;
+  font-size: 48rpx;
+  border:1rpx solid #64acfe;
+  color: #64acfe;
+  background: #ffffff;
+}
+.foot .btn{
+  display: block;
+  width:60%;
+  line-height: 60rpx;
+  margin-left:20%;
+  padding: 20rpx 0;
+  border-radius: 60rpx;
+  font-size: 48rpx;
+  border:1rpx solid #64acfe;
+  color: #64acfe;
+  background: #ffffff;
+}
+.foot .col-item text.spacing{
+  word-spacing: 15rpx;
+  letter-spacing: 12rpx;
+}
+.foot .col-item.active text{
+  color: #ffffff;
+  background: #64acfe;
+}
+form{
+  width:100%;
+}
+.quan_form{
+  width:94%;
+  padding: 0 3%;
+}
+.add_circle_head{
+  font-size: 50rpx;
+  color: #000000;
+  padding: 60rpx 3% 20rpx;
+}
+.section{
+  width:94%;
+  padding: 30rpx 3%;
+  background: #ffffff;
+  margin-top: 30rpx;
+}
+.section1{
+  width:94%;
+  padding: 10rpx 3%;
+  background: #ffffff;
+  margin-top: 20rpx;
+}
+.section1 text{
+  color: #65a5ff;
+  font-size: 45rpx;
+  margin-left: 10rpx;
+}
+.add_circle{
+  background: #ffffff;
+  align-items: center;  
+}
+.add_circle .add_url{
+  padding: 10px 0;
+  width: 100%;
+  font-size: 45rpx;
+  display: block;
+  text-align:center;
+  color:#000000;
+}
+.add_circle button.add_url{
+  padding: 10px 0;
+  width: 100%;
+  font-size: 45rpx;
+  display: block;
+  text-align:center;
+  color:#000000;
+  border:none;
+  line-height: 1;
+}
+.phcolor{  
+    color: #c4c4c4;  
+}
+.info_list {
+  width: 90%;
+  padding: 20rpx 3%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.info_list .gray {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.info_list .info_list_head text {
+  display: flex;
+  float: left;
+  margin-left: 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.info_list .info_list_head image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+
+.info_list .info_list_con {
+  padding: 30rpx 0;
+}
+
+.info_list .info_list_con .info_list_des {
+  font-size: 28rpx;
+}
+.voices_info{
+  padding-top: 30rpx;
+}
+.voices_info text{
+  width: 50%;
+  padding: 20rpx;
+  background: #64a6ff;
+  color: #ffffff;
+  display: block;
+  border-radius: 60rpx;
+}
+
+
+.a-scroll {
+  width: 100%;  
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;  
+}
+
+.my-scroll {
+  width: 100%; 
+  height: 210rpx;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.s-item {
+  width: 300rpx;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.a-scroll .s-item image {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.info_list .info_list_foot {
+  padding-top: 15rpx;
+  padding-bottom: 10rpx;
+  text-align: right;
+}
+.info_list .info_list_foot .time{
+  margin-left: 20rpx;
+}
+
+.info_list .info_list_foot text {
+  margin-right: 10rpx;
+  margin-left: 80rpx;
+}
